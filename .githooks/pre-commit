@@ -1,0 +1,9 @@
+#!/bin/sh
+# 提交前检查：uv.lock 只能引用官方 PyPI。用 `make hooks` 启用（core.hooksPath=.githooks）。
+set -eu
+
+cd "$(git rev-parse --show-toplevel)"
+
+if git diff --cached --name-only --diff-filter=ACM | grep -qx 'uv.lock'; then
+    git show :uv.lock | sh scripts/check-lock.sh -
+fi

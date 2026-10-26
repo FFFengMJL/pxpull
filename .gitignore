@@ -1,0 +1,25 @@
+# 生成物
+out/
+*.egg-info/
+build/
+dist/
+
+# 环境
+.venv/
+__pycache__/
+*.py[cod]
+
+# 工具缓存
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# 本机个人覆盖层（不要提交）
+AGENTS.local.md
+
+# 编辑器/系统
+.idea/
+.vscode/
+.DS_Store
